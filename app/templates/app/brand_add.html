@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- {% load static %} -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD_Data</title>
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.css' %}">
+</head>
+<body>
+    {% include 'app/header.html' %}
+    
+    <!-- <h2 class="text-center alert alert-danger my-3">Adding New Brand </h2> -->
+
+    <div class="container my-5">
+                            <a href="/base/">
+                            <button class="btn btn-primary">
+                              Back
+                            </button>
+                        </a>
+    </div>            
+    <div class="container mt-5">
+        
+        <div class="row">
+            <div class="col-md-5">
+                 
+                <div class="card ">
+                    <div class="card-body">
+                        <h6 class="text-center ">BRAND NAME</h6>
+                        </div>
+                        <form action="{% url 'add' %}" method="POST"> 
+                            {% csrf_token %}
+                            {{form.as_p}}
+
+
+                            <div class="md-3">
+                                <label for="brand_name"></label>
+                                <input name="brand_name" type="text" id="brand_name" class="form-control" placeholder="Enter Your New Brand">
+
+                            </div>
+                            <div class="container text-center my-4">
+                                <button class="btn btn-primary type='submit' ">
+                                    Save
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+        </div>
+        
+
+    </div>
+    <script src="{% static 'app/js/jquery.js' %}"></script>
+    <script src="{% static 'app/js/popper.js' %}"></script>
+    <script src="{% static 'app/js/bootstrap.js'%}"></script>
+</body>
+</html>

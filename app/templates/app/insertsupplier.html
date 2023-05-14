@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- {% load static %} -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD_Data</title>
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.css' %}">
+</head>
+<body>
+    {% include 'app/header.html' %}
+    
+    <!-- <h2 class="text-center alert alert-danger my-3">Adding New Brand </h2> -->
+
+    <div class="container my-4">
+                            <a href="/basesupplier/">
+                            <button class="btn btn-primary">
+                              Back
+                            </button>
+                        </a>
+    </div>            
+    <div class="container my-5">
+        
+        <div class="row">
+            <h5 class="text-center"> SUPPLIER</h5>
+            <div class="col-md-12"> 
+                <div class="card ">
+                    <div class="card-body">
+                        
+                        </div>
+                        <form action="{% url 'supplier' %}" method="POST"> 
+                            {% csrf_token %}
+
+
+                            <div class="md-3">
+                                <label for="supplier_name">Supplier</label>
+                                <input name="supplier_name" type="text" id="supplier_name" class="form-control" placeholder="Enter supplier">
+
+                            </div>
+                            <div class="md-3">
+                                <label for="mobile_no">Mobile_no</label>
+                                <input name="mobile_no" type="text"  id="mobile_no" class="form-control" placeholder="Enter your mobile_no">
+                            </div> 
+                            <div class="md-3">
+                                <label for="address">Address</label>
+                                <input name="address" type="text" id="address" class="form-control" placeholder="Enter Your address">
+                            </div>
+                            
+                            <div class="container text-center my-4">
+                                <button class="btn btn-primary type='submit">
+                                    Save
+                                </button>
+                            </div>  
+                        </form>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+        </div>
+        
+
+    </div>
+    <script src="{% static 'app/js/jquery.js' %}"></script>
+    <script src="{% static 'app/js/popper.js' %}"></script>
+    <script src="{% static 'app/js/bootstrap.js'%}"></script>
+</body>
+</html>

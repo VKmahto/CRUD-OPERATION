@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD_Operation</title>
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.css' %}">
+</head>
+<body>
+    {% include 'app/header.html' %}
+    <div class="container mt-5">
+        <!-- <h2 class="text-center alert alert-danger bg-info">Function Based View ModelForm CRUD Project</h2> -->
+    </div>
+    <div class="container text-center my-3 md-3">
+        <a href="./brand_add">
+        <button class="btn btn-primary mb-3">
+           Add Brand
+        </button>
+    </a>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>S. No</th>
+                                    <th>Brand Name</th>
+                                    <!-- <th>datetime</th>
+                                    <th>status</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for brand in brands %}
+                                <tr>
+                                    <td>{{forloop.counter}}</td>
+                                    <td>{{brand.brand_name}}</td>
+                                    <!-- <td>{{brand.datetime}}</td>
+                                    <td>{{brand.status}}</td> -->
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="{% static 'app/js/jquery.js' %}"></script>
+    <script src="{% static 'app/js/popper.js' %}"></script>
+    <script src="{% static 'app/js/bootstrap.js'%}"></script>
+</body>
+</html>
