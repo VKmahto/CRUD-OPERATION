@@ -9,7 +9,7 @@ urlpatterns = [
     path('add/base.html', views.base, name='base'),
     path('base/brand_add/', views.brand, name='brand_add'),
     #for supplier
-    # path('basesupplier/',views.basesupplier,name='basesupplier'),
+    path('basesupplier/',views.basesupplier,name='basesupplier'), 
     path('supplier/',views.add_supplier, name='supplier'),
     # path('submitform/',views.submitform),
 ]
